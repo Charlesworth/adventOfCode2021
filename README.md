@@ -10,4 +10,4 @@ Typescript requires Node.js and NPM install:
 
 To transpile and run:
 
-    npx tsc; node typescript/day<n>/part<n>.js
+    npx tsc; node solutions/day<n>/part<n>.js
