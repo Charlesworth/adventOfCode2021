@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 10, part 1');
+console.log('Advent of code 2021: day 10, part 1');
 
 const inputChunks: string[][] = readFileSync('./inputs/day10/part1', 'utf-8').split("\n").map((line) => line.split(""));
 

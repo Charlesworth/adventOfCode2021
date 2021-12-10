@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 1, part 2');
+console.log('Advent of code 2021: day 1, part 2');
 
-const depths = readFileSync('./inputs/day1/part1', 'utf-8').split("\n").map(strValue => Number.parseInt(strValue, 10));
+const depths = readFileSync('./inputs/day01/part1', 'utf-8').split("\n").map(strValue => Number.parseInt(strValue, 10));
 
 const slidingWindowDepths = [];
 for (let i = 2; i < depths.length; i++) {

@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 4, part 2');
+console.log('Advent of code 2021: day 4, part 1');
 
 interface BingoNumber {
     value: number;
@@ -16,37 +16,31 @@ const newBingoRow = (bingoBoardLine: string): BingoRow => {
         .map(valInt => { return { value: valInt, marked: false }; });
 }
 
-interface BingoBoard {
-    rows: BingoRow[];
-    hasWon: boolean;
-}
+type BingoBoard = BingoRow[];
 const newBingoBoard = (bingoBoardLines: string[]): BingoBoard => { 
-    return {
-        rows: bingoBoardLines.map(bingoBoardLine => newBingoRow(bingoBoardLine)),
-        hasWon: false,
-    };
+    return bingoBoardLines.map(bingoBoardLine => newBingoRow(bingoBoardLine));
 }
 const markBoard = (board: BingoBoard, calledNumber: number) => {
-    for (let row of board.rows) {
+    for (let row of board) {
         for (let bingoNumber of row) {
             if (bingoNumber.value == calledNumber) bingoNumber.marked = true;
         }
     }
 }
 const isWinngingBoard = (board: BingoBoard): boolean => {
-    for (const row of board.rows) {
+    for (const row of board) {
         if (row.every(bingoNumber => bingoNumber.marked == true)) return true;
     }
 
     for (let i = 0; i < 5; i++) {
-        if (board.rows[0][i].marked && board.rows[1][i].marked && board.rows[2][i].marked && board.rows[3][i].marked && board.rows[4][i].marked) return true;
+        if (board[0][i].marked && board[1][i].marked && board[2][i].marked && board[3][i].marked && board[4][i].marked) return true;
     }
 
     return false;
 }
 const getScore = (board: BingoBoard, calledNumber: number): number => {
     let scoreSum = 0
-    for (const row of board.rows) {
+    for (const row of board) {
         for (const bingoNumber of row) {
             if (!bingoNumber.marked) scoreSum += bingoNumber.value
         }
@@ -54,9 +48,7 @@ const getScore = (board: BingoBoard, calledNumber: number): number => {
     return scoreSum * calledNumber;
 }
 
-
-const getWinningScores = (input: string[]): number[] => {
-    let winningScores: number[] = [];
+const getWinningScore = (input: string[]): number => {
     const pickedNumbers: number[] = bingoInput[0].split(',').map(valStr => Number.parseInt(valStr, 10));
     
     let bingoBoards: BingoBoard[] = [];
@@ -67,19 +59,19 @@ const getWinningScores = (input: string[]): number[] => {
     
     for (let pickedNumber of pickedNumbers) {
         for (let bingoBoard of bingoBoards) {
-            if (!bingoBoard.hasWon) {
-                markBoard(bingoBoard, pickedNumber);
-                if (isWinngingBoard(bingoBoard)) {
-                    bingoBoard.hasWon = true;
-                    winningScores.push(getScore(bingoBoard, pickedNumber));
-                }
+            markBoard(bingoBoard, pickedNumber);
+            if (isWinngingBoard(bingoBoard)) {
+                return getScore(bingoBoard, pickedNumber);
             }
         }
     }
     
-    return winningScores;
+    return -1;
 }
 
-const bingoInput: string[] = readFileSync('./inputs/day4/part1', 'utf-8').split("\n");
-const lastWinningScore = getWinningScores(bingoInput).pop();
-console.log(`Final winning score ${lastWinningScore}`);
+const bingoInput: string[] = readFileSync('./inputs/day04/part1', 'utf-8').split("\n");
+const winningScore = getWinningScore(bingoInput);
+if (winningScore != -1)
+    console.log(`Answer: ${winningScore}`);
+else
+    console.error("Something went wrong!")

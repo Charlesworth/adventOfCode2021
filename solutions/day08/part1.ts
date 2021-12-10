@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 8, part 1');
+console.log('Advent of code 2021: day 8, part 1');
 
-const outputValues = readFileSync('./inputs/day8/part1', 'utf-8').split("\n").map(line => line.split(" | ")[1].split(" ")).flat();
+const outputValues = readFileSync('./inputs/day08/part1', 'utf-8').split("\n").map(line => line.split(" | ")[1].split(" ")).flat();
 
 const [lengthOf1, lengthOf4, lengthOf7, lengthOf8] = [2, 4, 3, 7];
 let [amountOf1, amountOf4, amountOf7, amountOf8] = [0, 0, 0, 0];
@@ -26,4 +26,4 @@ outputValues.forEach(outputValue => {
         }
     })
 
-console.log(`Number of 1s, 4s, 7s, or 8s: ${amountOf1 + amountOf4 + amountOf7 + amountOf8}`);
+console.log(`Answer: ${amountOf1 + amountOf4 + amountOf7 + amountOf8}`);

@@ -1,13 +1,13 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 2, part 1');
+console.log('Advent of code 2021: day 2, part 2');
 
 interface Command {
     instruction: string;
     value: number;
 }
 
-const commands: Command[] = readFileSync('./inputs/day2/part1', 'utf-8')
+const commands: Command[] = readFileSync('./inputs/day02/part1', 'utf-8')
     .split("\n")
     .map(cmdStr => {
         let [instruction, valStr] = cmdStr.split(" ");

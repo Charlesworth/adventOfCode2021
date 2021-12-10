@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 3, part 1');
+console.log('Advent of code 2021: day 3, part 2');
 
 const binaryLines: string[] = readFileSync('./inputs/day3/part1', 'utf-8').split("\n");
 const lineLength = binaryLines[0].length;

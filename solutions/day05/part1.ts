@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 5, part 1');
+console.log('Advent of code 2021: day 5, part 1');
 
 type Vector2D = {
     x: number;
@@ -48,7 +48,7 @@ const getRangeInclusive = (a: number, b: number): number[] => {
 
 // Solution
 
-const geothermalsInput: string[] = readFileSync('./inputs/day5/part1', 'utf-8').split("\n");
+const geothermalsInput: string[] = readFileSync('./inputs/day05/part1', 'utf-8').split("\n");
 const geoThermalLines: Line[] = getLinesFromInput(geothermalsInput);
 const geoThermalGridPoints: Vector2D[] = geoThermalLines
     .map(line => lineToVector2Ds(line))
@@ -71,4 +71,4 @@ for (let isGridpointGeothermalOverlap of geoThermalGridPointsOverlaps.values()) 
     }
 }
 
-console.log(overlaps);
+console.log(`Answer: ${overlaps}`);

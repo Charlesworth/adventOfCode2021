@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 9, part 1');
+console.log('Advent of code 2021: day 9, part 2');
 
-const heightMap: number[][] = readFileSync('./inputs/day9/part1', 'utf-8').split("\n").map((line) => [...line].map(Number));
+const heightMap: number[][] = readFileSync('./inputs/day09/part1', 'utf-8').split("\n").map((line) => [...line].map(Number));
 
 const height: number = heightMap.length;
 const width: number = heightMap[0].length;
@@ -46,4 +46,4 @@ const largest3Basins = basins
     .sort((a, b) => b - a)
     .slice(0, 3);
 const largestBasinMultiple = largest3Basins[0] * largest3Basins[1] * largest3Basins[2];
-console.log(largestBasinMultiple);
+console.log(`Answer: ${largestBasinMultiple}`);

@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 3, part 1');
+console.log('Advent of code 2021: day 3, part 1');
 
-const binaryLines: string[] = readFileSync('./inputs/day3/part1', 'utf-8').split("\n");
+const binaryLines: string[] = readFileSync('./inputs/day03/part1', 'utf-8').split("\n");
     
 let cumulativeOnesPerColumn: number[] = [0,0,0,0,0,0,0,0,0,0,0,0];
 binaryLines.forEach(binaryLine => {

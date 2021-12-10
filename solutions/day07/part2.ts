@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 7, part 1');
+console.log('Advent of code 2021: day 7, part 2');
 
-const input = readFileSync('./inputs/day7/part1', 'utf-8').split(",").map((valStr => Number.parseInt(valStr, 10)));
+const input = readFileSync('./inputs/day07/part1', 'utf-8').split(",").map((valStr => Number.parseInt(valStr, 10)));
 const maxPosition = Math.max(...input);
 
 const positionCosts: number[] = new Array(maxPosition).fill(0).map((_, i) => {
@@ -15,4 +15,4 @@ const positionCosts: number[] = new Array(maxPosition).fill(0).map((_, i) => {
 
 const minCost: number = Math.min(...positionCosts);
 
-console.log(`${minCost}`);
+console.log(`Answer: ${minCost}`);

@@ -1,14 +1,14 @@
 // Warning: I'm not particularly proud of this solution, I may come back to tidy it up but probably won't
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 8, part 2');
+console.log('Advent of code 2021: day 8, part 2');
 
 interface PuzzleLine {
     inputs: string[];
     outputs: string[];
 }
 
-const puzzleLines: PuzzleLine[] = readFileSync('./inputs/day8/part1', 'utf-8')
+const puzzleLines: PuzzleLine[] = readFileSync('./inputs/day08/part1', 'utf-8')
     .split("\n")
     .map(line => {
         const splitInput = line.split(" | ");
@@ -95,4 +95,4 @@ for (let puzzleLine of puzzleLines) {
     cumulativePuzzleOutputs += getOutput(puzzleLine);
 }
 
-console.log(`${cumulativePuzzleOutputs}`);
+console.log(`Answer: ${cumulativePuzzleOutputs}`);

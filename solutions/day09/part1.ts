@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 
-console.log('Advent of code: day 9, part 1');
+console.log('Advent of code 2021: day 9, part 1');
 
-const heightMap: number[][] = readFileSync('./inputs/day9/part1', 'utf-8').split("\n").map((line) => [...line].map(Number));
+const heightMap: number[][] = readFileSync('./inputs/day09/part1', 'utf-8').split("\n").map((line) => [...line].map(Number));
 
 const height: number = heightMap.length;
 const width: number = heightMap[0].length;
@@ -26,4 +26,4 @@ for (let verticlePosition = 0; verticlePosition < height; verticlePosition++) {
     }
 }
 
-console.log(cummulativeRisk);
+console.log(`Answer: ${cummulativeRisk}`);
