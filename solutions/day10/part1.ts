@@ -44,4 +44,4 @@ for (const chunkLine of inputChunks) {
     }
 }
 
-console.log(`Total syntax error score ${score}`);
+console.log(`Answer: ${score}`);

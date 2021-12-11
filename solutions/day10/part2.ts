@@ -58,4 +58,4 @@ for (const chunkLine of inputChunks) {
 const middleIndex = (scores.length - 1) / 2;
 const middleScore: number = scores.sort((a, b) => a - b)[middleIndex];
 
-console.log(`Middle autocompleation score: ${middleScore}`);
+console.log(`Answer: ${middleScore}`);
