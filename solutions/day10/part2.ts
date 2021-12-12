@@ -5,24 +5,24 @@ console.log('Advent of code 2021: day 10, part 2');
 const inputChunks: string[][] = readFileSync('./inputs/day10/part1', 'utf-8').split("\n").map((line) => line.split(""));
 
 const characterOpenClosePairs: { [key: string]: string } = {
-  "(": ")",
-  "[": "]",
-  "{": "}",
-  "<": ">",
+    "(": ")",
+    "[": "]",
+    "{": "}",
+    "<": ">",
 };
 
 const characterCloseOpenPairs: { [key: string]: string } = {
-  ")": "(",
-  "]": "[",
-  "}": "{",
-  ">": "<",
+    ")": "(",
+    "]": "[",
+    "}": "{",
+    ">": "<",
 };
 
 const autocompleationPoints: { [key: string]: number } = {
-  ")": 1,
-  "]": 2,
-  "}": 3,
-  ">": 4,
+    ")": 1,
+    "]": 2,
+    "}": 3,
+    ">": 4,
 }
 
 let scores: number[] = [];

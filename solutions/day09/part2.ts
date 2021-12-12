@@ -8,12 +8,12 @@ const height: number = heightMap.length;
 const width: number = heightMap[0].length;
 
 const getAdjacentPoints = (horizontalPosition: number, verticlePosition: number): number[][] => {
-  let adjacentPoints = [];
-  if (horizontalPosition > 0) adjacentPoints.push([horizontalPosition - 1, verticlePosition]);
-  if (verticlePosition > 0) adjacentPoints.push([horizontalPosition, verticlePosition - 1]);
-  if (horizontalPosition < width - 1) adjacentPoints.push([horizontalPosition + 1, verticlePosition]);
-  if (verticlePosition < height - 1) adjacentPoints.push([horizontalPosition, verticlePosition + 1]);
-  return adjacentPoints;
+    let adjacentPoints = [];
+    if (horizontalPosition > 0) adjacentPoints.push([horizontalPosition - 1, verticlePosition]);
+    if (verticlePosition > 0) adjacentPoints.push([horizontalPosition, verticlePosition - 1]);
+    if (horizontalPosition < width - 1) adjacentPoints.push([horizontalPosition + 1, verticlePosition]);
+    if (verticlePosition < height - 1) adjacentPoints.push([horizontalPosition, verticlePosition + 1]);
+    return adjacentPoints;
 }
 
 const fillBasin = (set: Set<string>, horizontalPosition: number, verticlePosition: number): Set<string> => {
